@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EliteControl - Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="fonts/fontawesome.css">
+    <link rel="stylesheet" href="fonts/inter.css">
+    <style>
+        /* Fallback para fontes */
+        @font-face {
+            font-family: 'Inter';
+            src: local('Inter'), url('fonts/Inter-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Inter';
+            src: local('Inter Medium'), url('fonts/Inter-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Inter';
+            src: local('Inter SemiBold'), url('fonts/Inter-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Inter';
+            src: local('Inter Bold'), url('fonts/Inter-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 flex items-center justify-center min-h-screen">
+    <div class="login-container glass-card animate-fade-in">
+        <div class="text-center mb-8">
+            <div class="login-logo mx-auto">
+                <img src="images/logo.png" alt="EliteControl Logo" width="80" height="80">
+            </div>
+            <h1 class="login-title">EliteControl</h1>
+            <p class="login-subtitle">Seu sistema de gestão inteligente</p>
+        </div>
+
+        <form id="loginForm" class="space-y-6">
+            <div class="form-group">
+                <label for="perfil" class="form-label">Setor / Cargo</label>
+                <div class="input-icon-wrapper">
+                    <i class="fas fa-user-tag input-icon"></i>
+                    <select id="perfil" name="perfil" class="form-input input-with-icon" required>
+                        <option value="" disabled selected>Selecione seu perfil</option>
+                        <option value="gerente">Dono/Gerente</option>
+                        <option value="inventario">Controlador de Estoque</option>
+                        <option value="vendas">Vendedor</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <div class="input-icon-wrapper">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" id="email" name="email" class="form-input input-with-icon" placeholder="Seu email" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password" class="form-label">Senha</label>
+                <div class="input-icon-wrapper">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="password" name="password" class="form-input input-with-icon" placeholder="Sua senha" required>
+                </div>
+            </div>
+            
+            <div id="loginErrorMessage" class="text-danger hidden"></div>
+            
+            <button type="submit" class="btn-primary">
+                Entrar
+            </button>
+        </form>
+        
+        <div class="login-footer">
+            <p>&copy; 2025 EliteControl. Todos os direitos reservados.</p>
+        </div>
+    </div>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/elitecontrol-data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
